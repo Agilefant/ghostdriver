@@ -97,7 +97,7 @@ ghostdriver.Session = function(desiredCapabilities) {
     _timeouts = {
         "script"            : _max32bitInt,
         "implicit"          : 200,          //< 200ms
-        "page load"         : _max32bitInt,
+        "page load"         : 15000,
     },
     _windows = {},  //< NOTE: windows are "webpage" in Phantom-dialect
     _currentWindowHandle = null,

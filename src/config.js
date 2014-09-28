@@ -28,10 +28,10 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 // Default configuration
 var defaultConfig = {
         "ip"        : "127.0.0.1",
-        "port"      : "8910",
+        "port"      : "4444",
         "hub"       : null,
         "logFile"   : null,
-        "logLevel"  : "INFO",
+        "logLevel"  : "DEBUG",
         "logColor"  : false
     },
     config = {
