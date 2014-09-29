@@ -31,7 +31,7 @@ var defaultConfig = {
         "port"      : "4444",
         "hub"       : null,
         "logFile"   : null,
-        "logLevel"  : "DEBUG",
+        "logLevel"  : "INFO",
         "logColor"  : false
     },
     config = {
