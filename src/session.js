@@ -444,8 +444,21 @@ ghostdriver.Session = function(desiredCapabilities) {
         for (wHandle in _windows) {
             if (_windows[wHandle].loading) {
                 return true;
-            }
+            } else {
+		// In PhantomJS, open connections makes the browser think page is still loading,
+		// so updates can only start when browser thinks page is loaded
+		_windows[wHandle].evaluate(function() {
+		    window.pageLoaded = true;
+		});
+	    }
         }
+
+	// make console messages appear in Webdriver log
+        for (wHandle in _windows) {
+	    _windows[wHandle].onConsoleMessage = function(msg, lineNum, sourceId) {
+		console.log('CONSOLE: ' + msg + ' (from line #' + lineNum + ' in "' + sourceId + '")');
+	    };
+	}
 
         // If we arrived here, means that no window is loading
         return false;
